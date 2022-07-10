@@ -1,0 +1,1 @@
+We will add a service that will read the file input as a stream and save the file submitted to a folder named UploadedFile under the path environment current directory. This service will be used in the controller to save the file posted as a stream

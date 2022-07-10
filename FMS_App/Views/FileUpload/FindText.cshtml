@@ -1,0 +1,40 @@
+﻿@model FMS_App.Models.SearchRequest
+
+@{
+    ViewData["Title"] = "File Upload Page";
+}
+
+<div class="text-center">
+    <h1 class="display-5">File Upload</h1>
+    
+    <hr />
+
+    <div>
+        <form enctype="multipart/form-data" method="POST">
+            <input type="file" name="file" /> 
+            <button type="submit">Upload File</button>            
+        </form>
+        <br/>
+            <br/>
+            <lable>Search Word : </lable> @Html.TextBoxFor(m => m.InputText) <br/> <br/>
+            <lable>File Name : </lable> &nbsp;     @Html.TextBoxFor(m => m.FileName)
+            <br/>
+            <br/>
+            @*<button type="submit">Search</button>*@
+            <button asp-action="FindText" asp-controller="FileUpload">Search</button>
+    </div>
+    <br/>
+    <br/>
+    <div>
+        
+    </div>
+
+@if(ViewBag.Message != null)
+{
+    <div class="alert" style="margin-top:20px">
+        @ViewBag.Message
+    </div>
+}
+<hr />
+
+</div>
